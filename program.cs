@@ -50,7 +50,10 @@ PrintArray(array);
 Console.Write("] → ");
 int newSize = FindNewSize(array);
 if (newSize==0) Console.WriteLine("[]");
-string[] newArray = CreateNewArray(array, newSize);
-Console.Write("[");
-PrintArray(newArray);
-Console.Write("]");
+else
+{
+   string[] newArray = CreateNewArray(array, newSize);
+   Console.Write("[");
+   PrintArray(newArray);
+   Console.Write("]");
+}
