@@ -27,11 +27,30 @@ int FindNewSize(string[] array)
    }
    return count;
 }
+string[] CreateNewArray(string[] array, int size)
+{
+   string[] newArray = new string[size];
+   int count = 0;
+   for (int i = 0; i < array.Length; i++)
+   {
+      if (array[i].Length<=3)
+      {
+         newArray[count] = array[i];
+         count++;
+      }
+   }
+   return newArray;
+}
 
 Console.Write("Введите длинну массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] array = FillArray(n);
 Console.Write("[");
 PrintArray(array);
-Console.Write("] →");
+Console.Write("] → ");
 int newSize = FindNewSize(array);
+if (newSize==0) Console.WriteLine("[]");
+string[] newArray = CreateNewArray(array, newSize);
+Console.Write("[");
+PrintArray(newArray);
+Console.Write("]");
